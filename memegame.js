@@ -1,5 +1,14 @@
 const emojis=["🙈","🙈","🐯","🐯","🐼","🐼","🦏","🦏","🐘","🐘","🐢","🐢","🦔","🦔","🐍","🐍"];
-var shuf_emojis=emojis.sort(()=>(Math.random()>0.5)?2:-1);
+const emojis2=["🦍","🦍","🦧","🦧","🦝","🦝","🐵","🐵","🦓","🦓","🦂","🦂","🦨","🦨","🐅","🐅"];
+if(Math.random()>0.5)
+   {
+    var shuf_emojis=emojis.sort(()=>(Math.random()>0.5)?2:-1);
+   }
+   else
+   {
+    var shuf_emojis=emojis2.sort(()=>(Math.random()>0.5)?2:-1);
+   }
+
 for(var i=0;i<16;i++)
 {
     var box=document.getElementById(i+1);
