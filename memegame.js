@@ -16,15 +16,16 @@ for(var i=0;i<16;i++)
 }
 function clicked(id){
      document.getElementById(id).classList.add("boxopen");
+     var elements=document.querySelectorAll('.boxopen');
      setTimeout(function(){
-             if(document.querySelectorAll('.boxopen').length>1)
+             if(elements.length>1)
              {
-                if(document.querySelectorAll('.boxopen')[0].innerHTML==document.querySelectorAll('.boxopen')[1].innerHTML)
+                if(elements[0].innerHTML==elements[1].innerHTML)
                    {
-                    document.querySelectorAll('.boxopen')[0].classList.add("boxmatch");
-                    document.querySelectorAll('.boxopen')[1].classList.add("boxmatch");
-                    document.querySelectorAll('.boxopen')[1].classList.remove("boxopen");
-                    document.querySelectorAll('.boxopen')[0].classList.remove("boxopen");
+                    elements[0].classList.add("boxmatch");
+                    elements[1].classList.add("boxmatch");
+                    elements[1].classList.remove("boxopen");
+                    elements[0].classList.remove("boxopen");
 
                     if(document.querySelectorAll('.boxmatch').length==emojis.length)
                     {
@@ -33,11 +34,39 @@ function clicked(id){
                    }
                    else
                    {
-                    document.querySelectorAll('.boxopen')[1].classList.remove("boxopen");
-                    document.querySelectorAll('.boxopen')[0].classList.remove("boxopen");
+                    if(elements[0].innerHTML=="🐍"||elements[1].innerHTML=="🐍"||elements[0].innerHTML=="🦂"||elements[1].innerHTML=="🦂")
+                    {
+                        var id;
+                        if(elements[0].innerHTML=="🐍"||elements[0].innerHTML=="🦂")
+                          id=elements[0].id;
+                        else if(elements[1].innerHTML=="🐍"||elements[1].innerHTML=="🦂")
+                         id=elements[1].id;
+                        
+                        swappy(id);
+                    }
+                    elements[1].classList.remove("boxopen");
+                    elements[0].classList.remove("boxopen");
                    }
              }
      },600);
+}
+function generate()
+{
+    return Math.floor(Math.random()*16);
+}
+function swappy(id)
+{
+    var openbox=document.getElementById(id);
+    var rand=generate();
+    while(rand==id||document.getElementById(rand).classList.contains("boxmatch"))
+     rand=generate();
+    
+     console.log(rand);
+    var closebox=document.getElementById(rand);
+    var temp=openbox.innerHTML;
+    openbox.innerHTML=closebox.innerHTML;
+    closebox.innerHTML=temp;
+    
 }
 function start(){
     document.getElementById("title").style.visibility='hidden';

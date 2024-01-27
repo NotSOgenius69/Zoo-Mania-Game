@@ -70,6 +70,7 @@ body{
     background: #ffffff;
     padding: 40px;
     transition: 0.25s;
+    overflow: hidden;
     transform: rotateY(180deg);
 }
 .card.boxopen{
