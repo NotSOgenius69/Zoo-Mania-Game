@@ -134,5 +134,13 @@ body{
     top:50%;
     transform: translate(-50%,-50%) scale(1);
 }
+#health{
+    font-size: 2em;
+    font-family: monospace;
+}
+#hp{
+    font-size: 1em;
+    font-family: monospace;
+}
 
 

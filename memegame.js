@@ -1,5 +1,6 @@
 const emojis=["🙈","🙈","🐯","🐯","🐼","🐼","🦏","🦏","🐘","🐘","🐢","🐢","🦔","🦔","🐍","🐍"];
 const emojis2=["🦍","🦍","🦧","🦧","🦝","🦝","🐵","🐵","🦓","🦓","🦂","🦂","🦨","🦨","🐅","🐅"];
+var health=document.getElementById("hp");
 if(Math.random()>0.5)
    {
     var shuf_emojis=emojis.sort(()=>(Math.random()>0.5)?2:-1);
@@ -56,16 +57,24 @@ function generate()
 }
 function swappy(id)
 {
+    var integer=parseInt(health.innerHTML,10);
+    integer=integer-10;
+    if(integer==0)
+    {
+        health.innerHTML=integer;
+        opendd();return;
+    }
     var openbox=document.getElementById(id);
     var rand=generate();
     while(rand==id||document.getElementById(rand).classList.contains("boxmatch"))
      rand=generate();
     
-     console.log(rand);
     var closebox=document.getElementById(rand);
     var temp=openbox.innerHTML;
     openbox.innerHTML=closebox.innerHTML;
     closebox.innerHTML=temp;
+
+    health.innerHTML=integer;
     
 }
 function start(){
@@ -84,4 +93,9 @@ function openpp()
 function closepp()
 {
     popup.classList.add("closepopup");
+}
+function opendd(){
+    document.getElementById("popuptitle").innerHTML="YOU LOST!!!";
+    document.getElementById("popupimg").src="sad.gif";
+    openpp();
 }
