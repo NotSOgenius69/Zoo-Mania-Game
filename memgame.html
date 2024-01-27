@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="memgame.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--start section-->
+    <div class="startcontainer" id="strtid">
+        <div id="title"><img src="title.png" height="150px"></div>
+        <div class="description">
+            <div id="text"><p>You are a zoo keeper.</p><p>But one day suddenly you find all the animals are out of their cage.</p>
+            <p>You have to find them and bring them to their cage as fast as possible.</p><p>Beware of the snakes!</p><p>Best of luck!👍</p></div>
+        </div>
+        <div class="startbutton">
+            <button class="button" id="startbtn" onclick="start()" style="visibility: visible;">Start</button>
+        </div>
+    </div>
+    <!--game section-->
+    <div class="maincontainer" id="mainid">
+        <div><img src="title.png" height="100px"></div>
+        <div class="game" id="grid">
+            <div class="card" id="1" onclick="clicked(this.id)" style="--clr:#0f0;"></div>
+            <div class="card" id="2" onclick="clicked(this.id)" style="--clr:#ff0;"></div>
+            <div class="card" id="3" onclick="clicked(this.id)" style="--clr:#f00;"></div>
+            <div class="card" id="4" onclick="clicked(this.id)" style="--clr:#f0f;"></div>
+            <div class="card" id="5" onclick="clicked(this.id)" style="--clr:#0ff;"></div>
+            <div class="card" id="6" onclick="clicked(this.id)" style="--clr:#0f0;"></div>
+            <div class="card" id="7" onclick="clicked(this.id)" style="--clr:#f0f;"></div>
+            <div class="card" id="8" onclick="clicked(this.id)" style="--clr:#f00;"></div>
+            <div class="card" id="9" onclick="clicked(this.id)" style="--clr:#f0f;"></div>
+            <div class="card" id="10" onclick="clicked(this.id)" style="--clr:#0ff;"></div>
+            <div class="card" id="11" onclick="clicked(this.id)" style="--clr:#ff0;"></div>
+            <div class="card" id="12" onclick="clicked(this.id)" style="--clr:#0f0;"></div>
+            <div class="card" id="13" onclick="clicked(this.id)" style="--clr:#f00;"></div>
+            <div class="card" id="14" onclick="clicked(this.id)" style="--clr:#ff0;"></div>
+            <div class="card" id="15" onclick="clicked(this.id)" style="--clr:#f0f;"></div>
+            <div class="card" id="16" onclick="clicked(this.id)" style="--clr:#0ff;"></div>
+        </div>
+        <div class="restart">
+            <button class="button" id="restartbtn" onclick="window.location.reload()">Restart Game</button>
+        </div>
+    </div>
+    <!--end section-->
+     <div class="popup" id="popupid">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1 style="color: #fff;">YOU WON!!!</h1>
+            <img src="party.gif" height="100px" width="100px" class="gif">
+            <button class="okbutton" id="okbtn" onclick="window.location.reload()">Restart</button>
+        </div>
+        <div class="controls"></div>
+     </div>
+    <script src="memegame.js"></script>
+</body>
+</html>
